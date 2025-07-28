@@ -37,7 +37,7 @@ This workflow outlines the automation of tasks for managing an Azure SQL Databas
     - **Name:** autoAccount **(2)**
     - **Location:** Use the default. **(3)**
 
-    ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img1.png)
+    ![Screenshot of the Add Automation Account screen.](../images/createautoacc.png)
 
 1. On the review page, select **Create**.
 
@@ -45,7 +45,7 @@ This workflow outlines the automation of tasks for managing an Azure SQL Databas
     
 ### Task 2 - Connect to an existing Azure SQL Database
 
-1. In the Azure portal, navigate to your database by searching for **SQL database(1)** in search bar and select**SQL Databases(2)**.
+1. In the Azure portal, navigate to your database by searching for **SQL database(1)** in search bar and select **SQL databases(2)**.
 
    ![Screenshot of searching for existing SQL databases.](../images/sql.png)
 
@@ -53,7 +53,7 @@ This workflow outlines the automation of tasks for managing an Azure SQL Databas
 
     ![Screenshot of selecting the AdventureWorks SQL database.](../images/dp-300(5).png)
 
-1. On the main section for your SQL Database page, select **Query editor (preview)**.
+1. On the main section for your SQL Database page, select **Query editor (preview)** from the left pane.
 
     ![Screenshot of selecting the Query editor (preview).](../images/dp300-lab13-img3.png)
 
@@ -94,7 +94,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
 
-1. Select the automation account that you created.
+1. Select the automation account **autoAccount** that you created.
 
     ![Screenshot of selecting the autoAccount automation account.](../images/dp-300-13.png)
 
@@ -102,7 +102,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of selecting the Modules menu.](../images/dp-300-14-01.png)
 
-1. Search for **sqlserver** within the Gallery.Select **SqlServer** which will direct to the next screen
+1. Search for **sqlserver** within the Gallery. Select **SqlServer** which will direct to the next screen.
 
     ![Screenshot of selecting the SqlServer module.](../images/dp-300-16.png)
 
@@ -114,7 +114,7 @@ The next steps consist of configuring the assets required in preparation for the
 
    ![Screenshot of selecting Select.](../images/123345.png)
 
-1. On the **Add a module** page, under **runtime version** select the latest runtime version available , then select **Import**. This will import the PowerShell module into your Automation account.
+1. On the **Add a module** page, under **Runtime version** select the latest runtime version available , then select **Import**. This will import the PowerShell module into your Automation account.
 
    ![Screenshot of selecting Select.](../images/dp-300-18.png)
 
@@ -133,7 +133,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 ### Task 4 - Create a PowerShell runbook
 
-1. In the Azure portal, navigate to your database by searching for **SQL database(1)** and select **SQL Databases(2)**.
+1. In the Azure portal, navigate to your database by searching for **SQL database(1)** and select **SQL databases(2)**.
 
     ![Screenshot of searching for existing SQL databases.](../images/sql.png)
 
@@ -145,7 +145,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of copying the server name.](../images/dp300-lab13-img5.png)
 
-1. On the Azure portal, in the top search box, type **automation(1)** an select **Automation Accounts**.
+1. On the Azure portal, in the top search box, type **automation(1)** an select **Automation Accounts(2)**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
 
@@ -161,7 +161,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. Enter the runbook name as **IndexMaintenance (1)** and a runbook type of **PowerShell (2)**. Select the latest runtime version available **(3)**, then select **Review+Create (4)**.
 
-    ![Screenshot of creating a runbook.](../images/dp-30027.png)
+    ![Screenshot of creating a runbook.](../images/createrunbook.png)
 
 1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the **server name (1)** <inject key="sqlServerFqdn"></inject> . Select **Save (2)**, and then select **Publish (3)**, and then select **Yes**..
 
@@ -203,7 +203,7 @@ Next you will schedule the runbook to execute on a regular basis.
 
 1. Specify the start time of **4:00AM** of the following day and in the **United States - Pacific Time** time zone. Configure the recurrence for every **1** days. Do not set an expiration, select **Create**.
 
-    ![Screenshot of the New Schedule pop out completed with example information.](../images/L13T5S5old.png)
+    ![Screenshot of the New Schedule pop out completed with example information.](../images/newsched.png)
 
 1. The schedule is now created **(1)** and linked to the runbook. Select **OK (2)**.
 
