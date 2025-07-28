@@ -266,7 +266,7 @@ Connect to the Azure SQL Database using SQL Server Management Studio (SSMS) with
 
      ![Picture 21](../images/filecreate.png)
 
-12. Ensure Save as type is **SQL File(*.sql)(1)** and click **Save**
+12. Ensure Save as type is **SQL File(*.sql)(1)** and click **Save(2)**
 
 
      ![Picture 21](../images/savesql.png)
