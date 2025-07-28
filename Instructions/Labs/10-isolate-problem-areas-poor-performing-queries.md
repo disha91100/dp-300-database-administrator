@@ -22,15 +22,21 @@ In this lab, you will complete the following tasks:
 
 ## Estimated timing: 30 minutes
 
+## Architecture 
+
+This workflow outlines a structured approach to SQL Server performance tuning using SQL Server Management Studio (SSMS). It starts with restoring a database and generating the actual execution plan to assess query performance (Tasks 1 and 2). Next, it focuses on identifying and resolving suboptimal query plans using Query Store to detect and manage regressions (Tasks 3 and 4). It then moves on to analyzing the Top Resource Consuming Queries report and forcing a more efficient execution plan if needed (Tasks 5 and 6). Finally, it demonstrates how to use query hints to influence query performance and modify queries to use variables and appropriate hints (Tasks 7 and 8), completing a comprehensive performance tuning cycle.
+
 ## Architecture diagram
 
 ![](../images/preview(10).png)
 
 ### Task 1 - Restore a database
 
-1.  Double click on icon SSMS on your labvm. 
+In this task you will restore a database by selecting a backup file or recovery point and configuring the target settings. This allows you to recover data to a new or existing SQL database.
 
-    ![Picture 01](../images/ssms.png)
+1.  Double click on the **SSMS** icon on your labvm. 
+
+    ![Picture 01](../images/ssmsdeskp.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" /> (1)**. Select **Connect (2)**.
 
@@ -42,7 +48,7 @@ In this lab, you will complete the following tasks:
 
    ![Picture 03](../images/dp-300-lab10-sql2.png)
 
-1. In the **New query** window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the **New query** window, copy and paste the below T-SQL into it. **Execute** the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -54,17 +60,20 @@ In this lab, you will complete the following tasks:
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
 
-1. You should see a successful message after the restore is complete.
+1. Under the Messages tab, you should see a message indicating that the database was restored successfully.
 
    ![Picture 03](../images/upd-dp-300-module-07-lab-05.png)
     
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="17c52a2e-a4fb-4d4f-8dd5-0d54f381a0ca" />
     
 ### Task 2 - Generate actual execution plan
+
+In this task you will generate the actual execution plan in SQL Server Management Studio by enabling the option before running a query. This helps visualize how the SQL Server processes the query, aiding in performance tuning.
 
 There are several ways to generate an execution plan in SQL Server Management Studio.
 
@@ -88,7 +97,7 @@ There are several ways to generate an execution plan in SQL Server Management St
     GO
     ```
 
-    You'll see a text version of the execution plan, instead of the actual query results for the **SELECT** statement.
+    In the results pane, you'll see a text version of the execution plan, instead of the actual query results for the **SELECT** statement.
 
       ![Screenshot showing the text version of a query plan](../images/upd-dp-300-module-10-lab-01.png)
 
@@ -104,9 +113,11 @@ There are several ways to generate an execution plan in SQL Server Management St
 
 ### Task 3 - Resolve a suboptimal query plan
 
+In this task you will Identify and resolve a suboptimal query plan by analyzing the execution plan, detecting performance issues 
+
 1. Copy and paste the code below into a **New query window.**
 
-    Select the **Include Actual Execution Plan (1)** icon as shown below before running the query, or press <kbd>CTRL</kbd>+<kbd>M</kbd>. Execute the query by selecting **Execute (2)** or press <kbd>F5</kbd>. Make note of the execution plan **(3)** and the logical reads in the messages tab.
+    Select the **Include Actual Execution Plan (1)** icon as shown below to the right of the Execute button, or press <kbd>CTRL</kbd>+<kbd>M</kbd>. Execute the query by selecting **Execute (2)** or press <kbd>F5</kbd>. Make note of the execution plan **(3)** and the logical reads in the messages tab.
 
     ```sql
     SET STATISTICS IO, TIME ON;
@@ -154,6 +165,7 @@ There are several ways to generate an execution plan in SQL Server Management St
   
 ### Task 4 - Use Query Store to detect and handle regression
 
+In this task you will enable and use Query Store to monitor query performance over time, identify regressions, and force stable execution plans for problematic queries to maintain consistent performance.
 Next you'll run a workload to generate query statistics for query store, examine **Top Resource Consuming Queries** report to identify poor performance, and see how to force a better execution plan.
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
@@ -176,7 +188,9 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
-1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
+1. Select the **File(1)** > **Open(2)** > **File...(3)** menu in SQL Server Management Studio.
+
+      ![](../images/openfile.png)
 
 1. Navigate to the **C:\LabFiles\Monitor and optimize\CreateRandomWorkloadGenerator.sql** file.
 
@@ -202,6 +216,8 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 ### Task 5 - Examine Top Resource Consuming Queries report
 
+In this you will access the Top Resource Consuming Queries report in Query Store to identify queries using the most CPU, I/O, or memory. This helps prioritize tuning efforts for improving overall database performance.
+
 1. In order to view the Query Store node you will need to refresh the AdventureWorks2017 database in SQL Server Management Studio. **Right click (1)** on database name and choose select **Refresh (2)**. You will then see the **Query Store (3)** node under the database.
 
       ![Expand Query Store](../images/dp300-lab10-img1.png)
@@ -214,10 +230,10 @@ Next you'll run a workload to generate query statistics for query store, examine
 
       ![Expand Query Store](../images/lab10-configure.png)
 
-> **Note**: If the 'configure' option is not available, set page zoom to 75% in browser settings and a dropdown option will appear to select the option.
+> **Note**: If the 'configure' option is not available, set page zoom to 75% - 80% (1) in browser settings and a dropdown(2) option will appear to select the option.
  ![Configure](../images/configure.png)
 
-4. In the configuration screen, change the filter for the **minimum number of query plans to 2 (1)**. Then select **OK (2)**.
+4. In the Configuration Top Resource Consuming Queries screen, change the filter for the **Minimum number of query plans to 2 (1)**. Then select **OK (2)**.
 
       ![Set Minimum number of query plans](../images/upd-dp-300-module-10-lab-09.png)
 
@@ -230,6 +246,8 @@ Next you'll run a workload to generate query statistics for query store, examine
     > **Note:** If you don't see the **Bar chart** then **change the minimum number of query plans to 1 and perform the Next step.**
 
 ### Task 6 - Force a better execution plan
+
+In this task you will use Query Store to select a high-performing execution plan and force it for a specific query. This ensures consistent performance by avoiding regressions caused by plan changes.
 
 1. Navigate to the plan summary portion of the report as shown below. You will note there are one or two execution plans with widely different durations.
 
@@ -249,6 +267,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 ### Task 7 - Use query hints to impact performance
 
+In this task you will apply query hints in SQL statements to influence the query optimizer’s behavior
 Next you'll run a workload, change the query to use a parameter, apply a query hint to the query, and re-execute it.
 
 Before continuing with the exercise close all the current query windows by selecting the **Window** menu, then select **Close All Documents**. In the popup select **No**.
@@ -294,9 +313,12 @@ Before continuing with the exercise close all the current query windows by selec
 
 ### Task 8 - Change the query to use a variable and use a Query Hint
 
+In this task you will modify the query to include a variable and apply a query hint to control execution behavior, which helps optimize performance by guiding the SQL engine’s plan selection for variable driven queries.
+
 1. Change the query to use a variable value for SalesPersonID.
 
-1. Use the T-SQL **DECLARE** statement to declare <strong>@SalesPersonID</strong> so you can pass in a value instead of hard-code the value in the **WHERE** clause. You should ensure that the data type of your variable matches the data type of the column in the target table to avoid implicit conversion.
+1. Use the T-SQL **DECLARE** statement to declare <strong>@SalesPersonID</strong> so you can pass in a value instead of hard-code the value in the **WHERE** clause. You should ensure that the data type of your variable matches the data type of the column in the target table to avoid implicit conversion. Execute the query with the actual query plan enabled.
+
 
     ```sql
     USE AdventureWorks2017;
@@ -315,7 +337,7 @@ Before continuing with the exercise close all the current query windows by selec
 
      - If you examine the execution plan, you will **note** it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
 
-1. You can help the query optimizer to make better choices by providing a query hint. Rerun the above query with `OPTION (RECOMPILE)`:
+1. You can help the query optimizer to make better choices by providing a query hint. Re-run the above query with `OPTION (RECOMPILE)`:
 
     ```sql
     USE AdventureWorks2017
@@ -338,10 +360,11 @@ Before continuing with the exercise close all the current query windows by selec
     Comparing the statistics, you can see in the message tab that the difference between logical reads is **68%** more (689 versus 409) for the query without the query hint.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="93744ff9-f128-46a8-acba-9c96d2a6d1be" />
 
 >**Results:** In this exercise, you've learned how to identify query problems, and how to fix it to improve the query plan.
 
