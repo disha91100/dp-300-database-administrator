@@ -53,7 +53,7 @@ In this task you will be creating a Virtual Network in Azure Portal.
 5. Configure the virtual network’s IP range for the Azure SQL database endpoint by navigating to the virtual network created, and on the **Settings** pane, click **Subnets**.
      ![vnet](../images/subnet1.png)
 
-6. Click on the **default** subnet link. Note that the **Subnet address range** you see might be different.
+6. Click on the **default** subnet link. Note that the **Subnet address range(10.0.0.0/24)** you see might be different.
 
      ![vnet](../images/s1d.png)
 
@@ -262,9 +262,12 @@ Connect to the Azure SQL Database using SQL Server Management Studio (SSMS) with
 
      ![Picture 21](../images/foldnew.png)  
    
-11. Within  SQL Server Management Studio save the query from File menu in folder **C:\LabFiles\Deploy Azure SQL Database**. 
+11. Within  SQL Server Management Studio save the query from **File(1)** menu, select **Save SQLQuery.sql As** in folder **C:\LabFiles\Deploy Azure SQL Database**.
 
      ![Picture 21](../images/filecreate.png)
+
+12. Ensure Save as type is **SQL File(*.sql)(1)** and click **Save**
+
 
      ![Picture 21](../images/savesql.png)
 
