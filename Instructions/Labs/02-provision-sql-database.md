@@ -258,11 +258,11 @@ Connect to the Azure SQL Database using SQL Server Management Studio (SSMS) with
 
      ![Picture 21](../images/resultsq1.png)
 
-9. Go to **File Explorer** in your LabVM and navigate to **C:\LabFiles** and create a folder by right clicking and select **New** then click on **Folder** and name it as **Deploy Azure SQL Database**.
+9. Go to **File Explorer** in your LabVM and navigate to **C:\LabFiles** and create a folder by right clicking and select **New(1)** then click on **Folder(2)** and name it as **Deploy Azure SQL Database**.
 
      ![Picture 21](../images/foldnew.png)  
    
-11. Within  SQL Server Management Studio save the query from **File(1)** menu, select **Save SQLQuery.sql As** in folder **C:\LabFiles\Deploy Azure SQL Database**.
+11. Within  SQL Server Management Studio save the query from **File(1)** menu, select **Save SQLQuery.sql As(2)** in folder **C:\LabFiles\Deploy Azure SQL Database**.
 
      ![Picture 21](../images/filecreate.png)
 
