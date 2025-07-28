@@ -55,6 +55,8 @@ In this task you will be creating a Virtual Network in Azure Portal.
 
 6. Click on the **default** subnet link. Note that the **Subnet address range** you see might be different.
 
+     ![vnet](../images/s1d.png)
+
 7. Click on **Service Endpoints(1)** from left pane, under Add service endpoints expand the **Services** drop down, select **Microsoft.Sql(2)**, and then select **default(3)** under Subnets then click on **Add(4)**.
 
    ![Picture 16](../images/12.png)
@@ -76,10 +78,11 @@ In this you will be creating an Azure SQL Database with SQL authentication, usin
      - **Subscription(1):** Use existing subscription
      - **Resource group(2):** **contoso-rg-<inject key="DeploymentID" enableCopy="false"/>**
      - **Database Name(3):** AdventureWorksLT
+     - **Server:** click on **Create new(4)** link.
      
      ![sql](../images/createsql.png)
 
-     - **Server:** click on **Create new(4)** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
+     -  The **Create SQL Database Server** page will open. Provide the server details as follow:
           - **Server name:** dp300-lab-<inject key="DeploymentID" enableCopy="false"/> **(1)**
           - **Location:**  <inject key="location" enableCopy="false"/> **(2)**
           - **Authentication method:** Use SQL authentication **(3)**
@@ -257,8 +260,13 @@ Connect to the Azure SQL Database using SQL Server Management Studio (SSMS) with
 
 9. Go to **File Explorer** in your LabVM and navigate to **C:\LabFiles** and create a folder by right clicking and select **New** then click on **Folder** and name it as **Deploy Azure SQL Database**.
 
-10. Within  SQL Server Management Studio save the query from File menu in folder **C:\LabFiles\Deploy Azure SQL Database**. 
+     ![Picture 21](../images/foldnew.png)  
+   
+11. Within  SQL Server Management Studio save the query from File menu in folder **C:\LabFiles\Deploy Azure SQL Database**. 
 
+     ![Picture 21](../images/filecreate.png)
+
+     ![Picture 21](../images/savesql.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
