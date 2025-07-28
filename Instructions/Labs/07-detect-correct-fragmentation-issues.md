@@ -63,6 +63,7 @@ In this task, you will restore a database using SQL Server Management Studio (SS
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
+  <validation step="5ffd4a63-bd51-4263-8f5d-1134b14a03fa" />
   
 ### Task 2 - Investigate index fragmentation
 
@@ -149,7 +150,8 @@ In this task, you analyze the database to identify indexes that are fragmented. 
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-  
+
+  <validation step="0dc0cc7f-2b4d-415f-8273-516db15f87b9" />
 
 ### Task 3 - Rebuild fragmented indexes
 
