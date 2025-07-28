@@ -35,12 +35,11 @@ In this lab, you will complete the following tasks:
 
    ![Picture 02](../images/upd-dp-300-module-07-lab-01.png)
     
-3. Select the **Databases** folder, and then **New Query**.
+3. Select the **Databases (1)** folder, and then **New Query (2)**.
 
     ![Picture 03](../images/dp300-lab9-img04.png)
 
-4. In the **New query** window, copy and paste the below T-SQL into it. Execute the query to restore the database.
-
+4. In the **New query** window, copy and paste the below T-SQL into it. 
     ```sql
     RESTORE DATABASE AdventureWorks2017
     FROM DISK = 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017.bak'
@@ -50,17 +49,21 @@ In this lab, you will complete the following tasks:
           MOVE 'AdventureWorks2017_log'
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
-    
- 5. You should see a successful message after the restore is complete.
+1. **Execute** the query to restore the database.  
+
+    ![image](../images/executeQuery.png)
+
+5. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp-300-lab-09-img5.png)
     
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
-   
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="3379fa81-ffc4-49c5-82db-97274e81a612" />
+
 ### Task 2 - Examine the query and identify the problem
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window.
@@ -209,11 +212,11 @@ There are two approaches we can implement to fix the implicit conversion warning
     Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
     
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
-  
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="3379fa81-ffc4-49c5-82db-97274e81a612" />
 
 >**Results:** In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.
 
