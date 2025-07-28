@@ -44,7 +44,14 @@ In this task you will create an Automation Account in Azure to manage and automa
 1. On the review page, select **Create**.
 
     ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img2.png)
-    
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="9ff4fdd7-7ebe-472e-8f07-7731916e2bbc" />
+
 ### Task 2 - Connect to an existing Azure SQL Database
 
 In this task you will connect to an existing Azure SQL Database by using the server name, authentication credentials, and enabling required network access. This allows automation scripts or tools to interact with the database.
@@ -137,6 +144,8 @@ In this task you will configure Automation Account assets like credentials or va
 
 ### Task 4 - Create a PowerShell runbook
 
+In this task you will create a PowerShell runbook that contains the script logic to automate operations on the Azure SQL Database.
+
 1. In the Azure portal, navigate to your database by searching for **SQL database(1)** and select **SQL databases(2)**.
 
     ![Screenshot of searching for existing SQL databases.](../images/sql.png)
@@ -187,7 +196,16 @@ In this task you will configure Automation Account assets like credentials or va
 
     ![Screenshot of a successful message for the runbook creation.](../images/dp-300-29.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="bf6398fa-b841-42ce-a7de-d66810356d60" />
+
 ### Task 5 - Create a schedule for a runbook
+
+In this task you will set up a schedule to run the PowerShell runbook at specified times, enabling automated and recurring execution.
 
 Next you will schedule the runbook to execute on a regular basis.
 
@@ -219,7 +237,9 @@ Next you will schedule the runbook to execute on a regular basis.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-  
+
+    <validation step="c957d707-11ee-4d53-9d06-c4c790fa4063" />
+    
 >**Results:** By completing this exercise you've automated the defragging of indexes on a SQL server database to run every day, at 4am.
 
 ### Review
