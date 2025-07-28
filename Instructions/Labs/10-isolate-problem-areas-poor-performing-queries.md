@@ -32,6 +32,8 @@ This workflow outlines a structured approach to SQL Server performance tuning us
 
 ### Task 1 - Restore a database
 
+In this task you will restore a database by selecting a backup file or recovery point and configuring the target settings. This allows you to recover data to a new or existing SQL database.
+
 1.  Double click on the **SSMS** icon on your labvm. 
 
     ![Picture 01](../images/ssmsdeskp.png)
@@ -71,6 +73,8 @@ This workflow outlines a structured approach to SQL Server performance tuning us
     
 ### Task 2 - Generate actual execution plan
 
+In this task you will generate the actual execution plan in SQL Server Management Studio by enabling the option before running a query. This helps visualize how the SQL Server processes the query, aiding in performance tuning.
+
 There are several ways to generate an execution plan in SQL Server Management Studio.
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
@@ -108,6 +112,8 @@ There are several ways to generate an execution plan in SQL Server Management St
     The query optimizer was able to locate an appropriate index to fetch the required records.
 
 ### Task 3 - Resolve a suboptimal query plan
+
+In this task you will Identify and resolve a suboptimal query plan by analyzing the execution plan, detecting performance issues 
 
 1. Copy and paste the code below into a **New query window.**
 
@@ -159,6 +165,7 @@ There are several ways to generate an execution plan in SQL Server Management St
   
 ### Task 4 - Use Query Store to detect and handle regression
 
+In this task you will enable and use Query Store to monitor query performance over time, identify regressions, and force stable execution plans for problematic queries to maintain consistent performance.
 Next you'll run a workload to generate query statistics for query store, examine **Top Resource Consuming Queries** report to identify poor performance, and see how to force a better execution plan.
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
@@ -209,6 +216,8 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 ### Task 5 - Examine Top Resource Consuming Queries report
 
+In this you will access the Top Resource Consuming Queries report in Query Store to identify queries using the most CPU, I/O, or memory. This helps prioritize tuning efforts for improving overall database performance.
+
 1. In order to view the Query Store node you will need to refresh the AdventureWorks2017 database in SQL Server Management Studio. **Right click (1)** on database name and choose select **Refresh (2)**. You will then see the **Query Store (3)** node under the database.
 
       ![Expand Query Store](../images/dp300-lab10-img1.png)
@@ -238,6 +247,8 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 ### Task 6 - Force a better execution plan
 
+In this task you will use Query Store to select a high-performing execution plan and force it for a specific query. This ensures consistent performance by avoiding regressions caused by plan changes.
+
 1. Navigate to the plan summary portion of the report as shown below. You will note there are one or two execution plans with widely different durations.
 
       ![Plan summary](../images/upd-dp-300-module-10-lab-11.png)
@@ -256,6 +267,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 ### Task 7 - Use query hints to impact performance
 
+In this task you will apply query hints in SQL statements to influence the query optimizer’s behavior
 Next you'll run a workload, change the query to use a parameter, apply a query hint to the query, and re-execute it.
 
 Before continuing with the exercise close all the current query windows by selecting the **Window** menu, then select **Close All Documents**. In the popup select **No**.
@@ -300,6 +312,8 @@ Before continuing with the exercise close all the current query windows by selec
    - This query uses a constant in its `WHERE` clause, the optimizer sees each of these queries as unique and generates a different execution plan each time.
 
 ### Task 8 - Change the query to use a variable and use a Query Hint
+
+In this task you will modify the query to include a variable and apply a query hint to control execution behavior, which helps optimize performance by guiding the SQL engine’s plan selection for variable driven queries.
 
 1. Change the query to use a variable value for SalesPersonID.
 
