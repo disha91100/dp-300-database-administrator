@@ -30,7 +30,7 @@ In this lab, you will complete the following tasks:
 
 1.  Double click on icon SSMS on your labvm. 
 
-    ![Picture 01](../images/ssms.png)
+    ![Picture 01](../images/ssmsdeskp.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" /> (1)**. Select **Connect (2)**.
 
@@ -42,7 +42,7 @@ In this lab, you will complete the following tasks:
 
    ![Picture 03](../images/dp-300-lab10-sql2.png)
 
-1. In the **New query** window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the **New query** window, copy and paste the below T-SQL into it. **Execute** the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
