@@ -27,6 +27,8 @@ This workflow outlines the automation of tasks for managing an Azure SQL Databas
 
 ### Task 1 - Create an Automation Account
 
+In this task you will create an Automation Account in Azure to manage and automate repetitive tasks. This account serves as the foundation for running scripts and managing runbooks securely.
+
 1. In the Azure portal in the search bar type **automation (1)** and then select **Automation Accounts (2)** from the search results, and then select **+ Create**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
@@ -44,6 +46,8 @@ This workflow outlines the automation of tasks for managing an Azure SQL Databas
     ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img2.png)
     
 ### Task 2 - Connect to an existing Azure SQL Database
+
+In this task you will connect to an existing Azure SQL Database by using the server name, authentication credentials, and enabling required network access. This allows automation scripts or tools to interact with the database.
 
 1. In the Azure portal, navigate to your database by searching for **SQL database(1)** in search bar and select **SQL databases(2)**.
 
@@ -88,7 +92,7 @@ This workflow outlines the automation of tasks for managing an Azure SQL Databas
 
 ### Task 3 - Configure Automation Account assets
 
-The next steps consist of configuring the assets required in preparation for the runbook creation. Then select **Automation Accounts**.
+In this task you will configure Automation Account assets like credentials or variables to securely store and use required values in automation tasks.
 
 1. On the Azure portal, in the top search box, type **automation(1)** and select **Automation Accounts(2)**.
 
@@ -145,7 +149,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of copying the server name.](../images/dp300-lab13-img5.png)
 
-1. On the Azure portal, in the top search box, type **automation(1)** an select **Automation Accounts(2)**.
+1. On the Azure portal, in the top search box, type **automation(1)** and select **Automation Accounts(2)**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
 
@@ -199,9 +203,9 @@ Next you will schedule the runbook to execute on a regular basis.
 
     ![Screenshot of the create a schedule link.](../images/dp-300-32.png)
 
-1. Give the name **IndexMaintenanceSchedule**. 
+1. Give the name **IndexMaintenanceSchedule(1)**. 
 
-1. Specify the start time of **4:00AM** of the following day and in the **United States - Pacific Time** time zone. Configure the recurrence for every **1** days. Do not set an expiration, select **Create**.
+1. Specify the start time of **4:00 AM  (2)** of the following day and in the **United States - Pacific Time(3)** time zone. Select **Recurring(4)** and configure the Recurrence for every **1 day**, Set expiration to **No(6)**, select **Create()7**.
 
     ![Screenshot of the New Schedule pop out completed with example information.](../images/newsched.png)
 
