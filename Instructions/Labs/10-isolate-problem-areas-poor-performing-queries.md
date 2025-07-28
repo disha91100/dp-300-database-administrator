@@ -179,7 +179,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
-1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
+1. Select the **File(1)** > **Open(2)** > **File...(3)** menu in SQL Server Management Studio.
 
       ![](../images/openfile.png)
 
