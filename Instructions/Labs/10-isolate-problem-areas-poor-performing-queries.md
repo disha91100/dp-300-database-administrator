@@ -22,13 +22,17 @@ In this lab, you will complete the following tasks:
 
 ## Estimated timing: 30 minutes
 
+## Architecture 
+
+This workflow outlines a structured approach to SQL Server performance tuning using SQL Server Management Studio (SSMS). It starts with restoring a database and generating the actual execution plan to assess query performance (Tasks 1 and 2). Next, it focuses on identifying and resolving suboptimal query plans using Query Store to detect and manage regressions (Tasks 3 and 4). It then moves on to analyzing the Top Resource Consuming Queries report and forcing a more efficient execution plan if needed (Tasks 5 and 6). Finally, it demonstrates how to use query hints to influence query performance and modify queries to use variables and appropriate hints (Tasks 7 and 8), completing a comprehensive performance tuning cycle.
+
 ## Architecture diagram
 
 ![](../images/preview(10).png)
 
 ### Task 1 - Restore a database
 
-1.  Double click on icon SSMS on your labvm. 
+1.  Double click on the **SSMS** icon on your labvm. 
 
     ![Picture 01](../images/ssmsdeskp.png)
 
@@ -54,15 +58,14 @@ In this lab, you will complete the following tasks:
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
 
-1. You should see a successful message after the restore is complete.
+1. Under the Messages tab, you should see a message indicating that the database was restored successfully.
 
    ![Picture 03](../images/upd-dp-300-module-07-lab-05.png)
     
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
     
 ### Task 2 - Generate actual execution plan
 
@@ -88,7 +91,7 @@ There are several ways to generate an execution plan in SQL Server Management St
     GO
     ```
 
-    You'll see a text version of the execution plan, instead of the actual query results for the **SELECT** statement.
+    In the results pane, you'll see a text version of the execution plan, instead of the actual query results for the **SELECT** statement.
 
       ![Screenshot showing the text version of a query plan](../images/upd-dp-300-module-10-lab-01.png)
 
@@ -106,7 +109,7 @@ There are several ways to generate an execution plan in SQL Server Management St
 
 1. Copy and paste the code below into a **New query window.**
 
-    Select the **Include Actual Execution Plan (1)** icon as shown below before running the query, or press <kbd>CTRL</kbd>+<kbd>M</kbd>. Execute the query by selecting **Execute (2)** or press <kbd>F5</kbd>. Make note of the execution plan **(3)** and the logical reads in the messages tab.
+    Select the **Include Actual Execution Plan (1)** icon as shown below to the right of the Execute button, or press <kbd>CTRL</kbd>+<kbd>M</kbd>. Execute the query by selecting **Execute (2)** or press <kbd>F5</kbd>. Make note of the execution plan **(3)** and the logical reads in the messages tab.
 
     ```sql
     SET STATISTICS IO, TIME ON;
@@ -177,6 +180,8 @@ Next you'll run a workload to generate query statistics for query store, examine
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
 1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
+
+      ![](../images/openfile.png)
 
 1. Navigate to the **C:\LabFiles\Monitor and optimize\CreateRandomWorkloadGenerator.sql** file.
 
@@ -296,7 +301,8 @@ Before continuing with the exercise close all the current query windows by selec
 
 1. Change the query to use a variable value for SalesPersonID.
 
-1. Use the T-SQL **DECLARE** statement to declare <strong>@SalesPersonID</strong> so you can pass in a value instead of hard-code the value in the **WHERE** clause. You should ensure that the data type of your variable matches the data type of the column in the target table to avoid implicit conversion.
+1. Use the T-SQL **DECLARE** statement to declare <strong>@SalesPersonID</strong> so you can pass in a value instead of hard-code the value in the **WHERE** clause. You should ensure that the data type of your variable matches the data type of the column in the target table to avoid implicit conversion. Execute the query with the actual query plan enabled.
+
 
     ```sql
     USE AdventureWorks2017;
@@ -315,7 +321,7 @@ Before continuing with the exercise close all the current query windows by selec
 
      - If you examine the execution plan, you will **note** it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
 
-1. You can help the query optimizer to make better choices by providing a query hint. Rerun the above query with `OPTION (RECOMPILE)`:
+1. You can help the query optimizer to make better choices by providing a query hint. Re-run the above query with `OPTION (RECOMPILE)`:
 
     ```sql
     USE AdventureWorks2017
@@ -338,10 +344,9 @@ Before continuing with the exercise close all the current query windows by selec
     Comparing the statistics, you can see in the message tab that the difference between logical reads is **68%** more (689 versus 409) for the query without the query hint.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 >**Results:** In this exercise, you've learned how to identify query problems, and how to fix it to improve the query plan.
 
