@@ -20,15 +20,21 @@ In this lab, you will complete the following tasks:
 
 ### Task 1 - Enable Microsoft Defender for SQL
 
-1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click on **SQL servers** from the list of options.
+1. From the Azure Portal, search for **SQL servers (1)** in the search box at the top, then click on **SQL servers (2)** from the list of options.
 
    ![Picture 1](../images/dp-300-lab5-1.png)
 
-1. Select the server name **dp300-lab-<inject key="DeploymentID" enableCopy="false"/>** to be taken to the detail page (you may have a different location assigned for your SQL server).
+1. Select the server name **dp300-lab-<inject key="DeploymentID" enableCopy="false"/>** to be taken to the detail page.
 
    ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab5-2.png)
+   
+   >**Note:** You may have a different location assigned for your SQL server
 
-1. From the main blade of your Azure SQL server, navigate to the **Security** section, and select **Microsoft Defender for Cloud**.
+1. From the main blade of your Azure SQL server, navigate to the **Security (1)** section, and select **Microsoft Defender for Cloud (2)**.
+   ![image](../images/dp-300-lab5-3a.png) 
+
+1. Click on the link in the header labeled **Microsoft Defender for Cloud**.
+   ![image](../images/dp-300-lab5-3b.png) 
 
 1. On the **Microsoft Defender for Cloud** page, select **Enable**.
 
@@ -42,23 +48,28 @@ In this lab, you will complete the following tasks:
 
    ![Screenshot of selecting the Configure option](../images/dp-300-lab5-4.png)
 
-1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON**.
-    
+1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON (1)** then **close (2)** the tab.
+
+   ![image](../images/dp-300-lab5-4a.png)
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="df0996ae-1327-4de4-90b7-cd81257c2cc7" />
   
 ### Task 2 - Enable Data Classification
 
-1. From the main blade of your Azure SQL server, navigate to the **Settings** section, and select **SQL databases (1)**, and then select the database name **(2)**.
+1. From the main blade of your Azure SQL server, navigate to the **Settings (1)** section, and select **SQL databases (2)**, and then select the  **AdventureWorksLT (3)** database.
 
    ![Screenshot showing selecting the AdventureWOrksLT database](../images/dp-300-lab5-5.png)
 
-1. On the main blade for the **AdventureWorksLT** database, from left navigation pane select **Data Discovery & Classification** under **Security** section.
-  
-1. On the **Data Discovery & Classification** page, you will see an informational message that reads: **Currently using SQL Information Protection policy. We have found 15 columns with classification recommendations**. Select this link.
+1. On the main blade for the **AdventureWorksLT** database, from left navigation pane under **Security (1)** section, select **Data Discovery & Classification (2)** .
+
+   ![image](../images/dp-300-lab5-5a.png)
+
+1. On the **Data Discovery & Classification** page, you'll notice an informational message stating: **Currently using SQL Information Protection policy. We have found 15 columns with classification recommendations**. Click on this link to proceed.
 
    ![Screenshot showing the Classification Recommendations](../images/dp-300-lab5-6.png)
       
