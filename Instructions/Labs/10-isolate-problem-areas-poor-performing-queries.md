@@ -66,6 +66,8 @@ This workflow outlines a structured approach to SQL Server performance tuning us
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="17c52a2e-a4fb-4d4f-8dd5-0d54f381a0ca" />
     
 ### Task 2 - Generate actual execution plan
 
@@ -219,10 +221,10 @@ Next you'll run a workload to generate query statistics for query store, examine
 
       ![Expand Query Store](../images/lab10-configure.png)
 
-> **Note**: If the 'configure' option is not available, set page zoom to 75% in browser settings and a dropdown option will appear to select the option.
+> **Note**: If the 'configure' option is not available, set page zoom to 75% - 80% (1) in browser settings and a dropdown(2) option will appear to select the option.
  ![Configure](../images/configure.png)
 
-4. In the configuration screen, change the filter for the **minimum number of query plans to 2 (1)**. Then select **OK (2)**.
+4. In the Configuration Top Resource Consuming Queries screen, change the filter for the **Minimum number of query plans to 2 (1)**. Then select **OK (2)**.
 
       ![Set Minimum number of query plans](../images/upd-dp-300-module-10-lab-09.png)
 
@@ -347,6 +349,8 @@ Before continuing with the exercise close all the current query windows by selec
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="93744ff9-f128-46a8-acba-9c96d2a6d1be" />
 
 >**Results:** In this exercise, you've learned how to identify query problems, and how to fix it to improve the query plan.
 
