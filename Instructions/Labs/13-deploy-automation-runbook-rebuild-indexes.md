@@ -17,6 +17,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated timing: 30 minutes
 
+## Architecture
+
+This workflow outlines the automation of tasks for managing an Azure SQL Database. It starts with creating and configuring an Automation Account and its assets. Then, the system connects to an existing Azure SQL Database. A PowerShell runbook is created to define the automation process, and finally, a schedule is set up to run the automation at specific times, ensuring consistent and automated SQL operations.
+
 ## Architecture diagram
 
 ![](../images/preview(13).png)
@@ -41,7 +45,7 @@ In this lab, you will complete the following tasks:
     
 ### Task 2 - Connect to an existing Azure SQL Database
 
-1. In the Azure portal, navigate to your database by searching for **sql databases**.
+1. In the Azure portal, navigate to your database by searching for **SQL database(1)** in search bar and select**SQL Databases(2)**.
 
    ![Screenshot of searching for existing SQL databases.](../images/sql.png)
 
@@ -58,7 +62,7 @@ In this lab, you will complete the following tasks:
     - **Login:** sqladmin
     - **Password:** P@ssw0rd01
 
-1. If You receive the following error message, follow these steps otherwise, start performing the steps from step-8:
+1. If You receive the following error message, follow these steps otherwise, start performing the steps from Step-8:
 
     ![Screenshot of the sign in error.](../images/errorupdated01.png)
 
@@ -86,7 +90,7 @@ In this lab, you will complete the following tasks:
 
 The next steps consist of configuring the assets required in preparation for the runbook creation. Then select **Automation Accounts**.
 
-1. On the Azure portal, in the top search box, type **automation**.
+1. On the Azure portal, in the top search box, type **automation(1)** and select **Automation Accounts(2)**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
 
@@ -98,11 +102,11 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of selecting the Modules menu.](../images/dp-300-14-01.png)
 
-1. Search for **sqlserver** within the Gallery.
+1. Search for **sqlserver** within the Gallery.Select **SqlServer** which will direct to the next screen
 
     ![Screenshot of selecting the SqlServer module.](../images/dp-300-16.png)
 
-1. Select **SqlServer** which will direct to the next screen, and then select **Select**.
+1. In the SqlServer page click on **Select**.
 
     ![Screenshot of selecting Select.](../images/dp-300-17.png)
 
@@ -110,11 +114,11 @@ The next steps consist of configuring the assets required in preparation for the
 
    ![Screenshot of selecting Select.](../images/123345.png)
 
-1. On the **Add a module** page, under **runtime version** select the latest runtime version available **(1)**, then select **Import (2)**. This will import the PowerShell module into your Automation account.
+1. On the **Add a module** page, under **runtime version** select the latest runtime version available , then select **Import**. This will import the PowerShell module into your Automation account.
 
    ![Screenshot of selecting Select.](../images/dp-300-18.png)
 
-1. You'll need to create a credential to securely sign in to your database. From the blade for the Automation Account navigate to the **Shared Resources** section and select **Credentials**.
+1. You'll need to create a credential to securely sign in to your database. From the blade for the **Automation Account** navigate to the **Shared Resources** section and select **Credentials**.
 
     ![Screenshot of selecting Credentials option.](../images/dp-300-19.png)
 
@@ -129,7 +133,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 ### Task 4 - Create a PowerShell runbook
 
-1. In the Azure portal, navigate to your database by searching for **sql databases**.
+1. In the Azure portal, navigate to your database by searching for **SQL database(1)** and select **SQL Databases(2)**.
 
     ![Screenshot of searching for existing SQL databases.](../images/sql.png)
 
@@ -141,11 +145,11 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of copying the server name.](../images/dp300-lab13-img5.png)
 
-1. On the Azure portal, in the top search box, type **automation**.
+1. On the Azure portal, in the top search box, type **automation(1)** an select **Automation Accounts**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
 
-1. Select the automation account that you created.
+1. Select the automation account **autoAccount** that you created.
 
     ![Screenshot of selecting the autoAccount automation account.](../images/dp-300-25.png)
 
@@ -155,7 +159,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     >**Note:** As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
 
-1. Enter the runbook name as **IndexMaintenance (1)** and a runbook type of **PowerShell (2)**. Select the latest runtime version available **(3)**, then select **Create (4)**.
+1. Enter the runbook name as **IndexMaintenance (1)** and a runbook type of **PowerShell (2)**. Select the latest runtime version available **(3)**, then select **Review+Create (4)**.
 
     ![Screenshot of creating a runbook.](../images/dp-30027.png)
 
@@ -197,7 +201,7 @@ Next you will schedule the runbook to execute on a regular basis.
 
 1. Give the name **IndexMaintenanceSchedule**. 
 
-1. Specify the start time of **4:00AM** of the following day and in the **United States - Pacific Time** time zone. Configure the reoccurrence for every **1** days. Do not set an expiration, select **Create**.
+1. Specify the start time of **4:00AM** of the following day and in the **United States - Pacific Time** time zone. Configure the recurrence for every **1** days. Do not set an expiration, select **Create**.
 
     ![Screenshot of the New Schedule pop out completed with example information.](../images/L13T5S5old.png)
 
@@ -208,10 +212,9 @@ Next you will schedule the runbook to execute on a regular basis.
     Azure Automation delivers a cloud-based automation, and configuration service that supports consistent management across your Azure and non-Azure environments.
    
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
   
 >**Results:** By completing this exercise you've automated the defragging of indexes on a SQL server database to run every day, at 4am.
 
