@@ -22,7 +22,7 @@ In this lab, you will complete the following tasks:
 
 ### Task 1 - Review CPU utilization in Azure portal
   
-1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click **SQL servers** from the list of options.
+1. From the Azure Portal, search for **SQL servers (1)** in the search box at the top, then click **SQL servers (2)** from the list of options.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab5-1.png)
 
@@ -30,15 +30,15 @@ In this lab, you will complete the following tasks:
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img3.png)
 
-1. From the main blade of your Azure SQL server, navigate to the **Settings** section, and select **SQL databases**, and then select the database name.
+1. From the main blade of your Azure SQL server, navigate to the **Settings (1)** section, and select **SQL databases (2)**, and then select the **AdventureWorksLT (3)** database.
 
     ![Screenshot showing selecting the AdventureWOrksLT database](../images/dp-300-lab-06-img4.png)
 
-1. On the database **Overview** page, select **Set server firewall**.
+1. On the database **Overview** section, select **Set server firewall**.
 
     ![Screenshot showing selecting Set server firewall](../images/dp-300-lab-06-img5.png)
 
-1. On the **Networking** page, select **+ Add your client IPv4 address (your IP address)**, then select **Save**.
+1. On the **Networking** section, select **+ Add your client IPv4 address (your IP address) (1)**, then select **Save (2)**.
 
     ![Screenshot showing selecting Add client IP](../images/dp-300-lab-06-img6.png)
 
@@ -50,11 +50,11 @@ In this lab, you will complete the following tasks:
 
     ![Screenshot showing selecting AdventureWorks](../images/dp-300-lab-06-img8.png)
    
-1. In **Password**, type **P@ssw0rd01** and select **OK**.
+1. In **Password**, type **P@ssw0rd01 (1)** and select **OK (2)**.
 
      ![Screenshot showing selecting AdventureWorks](../images/dp-300-lab-06-img9.png)
 
-1. In **Query 1**, type the following query, and select **Run**:
+1. In **Query 1 (1)**, type the following query, and select **Run (2)**:
 
     ```sql
     DECLARE @Counter INT 
@@ -85,7 +85,7 @@ In this lab, you will complete the following tasks:
 
     ![Screenshot showing selecting the Metrics icon](../images/dp-300-lab-06-img11.png)
 
-1. Change the **Metric** menu option to reflect **CPU Percentage**, then select an **Aggregation** of **Avg**. This will display the average CPU Percentage for the given time frame.
+1. Change the **Metric** menu option to reflect **CPU Percentage (1)**, then select an **Aggregation** of **Avg (2)**. This will display the average CPU Percentage for the given time frame.
 
     ![Screenshot showing CPU Percentage](../images/dp-300-lab-06-img12.png)
 
