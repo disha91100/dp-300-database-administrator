@@ -62,7 +62,7 @@ In this lab, you will complete the following tasks:
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
-   <validation step="3379fa81-ffc4-49c5-82db-97274e81a612" />
+   <validation step="e558844b-1b5f-4e00-b300-db811cca7cbd" />
 
 ### Task 2 - Examine the query and identify the problem
 
@@ -216,7 +216,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
-   <validation step="3379fa81-ffc4-49c5-82db-97274e81a612" />
+   <validation step="5e984651-fed0-4859-a8d3-d0d09dd00be6" />
 
 >**Results:** In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.
 
