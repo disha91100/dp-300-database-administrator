@@ -45,16 +45,29 @@ In this lab, you will complete the following task:
 
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/dp-300-lab12-02.png)
 
-7. On the **Notifications (1)** tab, enter the following information:
+7. Configure Notifications
 
-    - **Notification type:** Email/SMS message/Push/Voice **(2)**
-       > **Note:** When you select this option, a Email/SMS message/Push/Voice flyout will appear. Check the Email **(3)** property and type the proper email address **(4)**, you can also use your personal email so that you can receive the notifications as shown in the last steps, Check the SMS **(5)** enter your country code **(6)** and your phone number **(7)**.
-     - Click on **OK (8)**
-    - **Name:** DemoLab (9)
-    - Select **Review + create**, then select **Create**.
-        >**Note:** Wait till action group created successfully then move to next step.
+    - Go to the **Notifications (1)** tab to configure notification settings:
+ 
+    - Select **Notification type:** **Email/SMS message/Push/Voice (2)**.
 
-      ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
+        > **Note:** Selecting this option opens the **Email/SMS message/Push/Voice** flyout panel.
+
+    - **Configure Notification Methods:**
+        - **Email :**  Check the **Email (3)** option and Enter a valid **email address (4)**.
+           
+            > **Note:** You may use your personal email address to ensure you receive the notifications.
+
+        - **SMS :** Check the **SMS (5)** option. Enter your **country code (6)** and your **phone number (7)**.
+
+    - Click **OK (8)** to save the notification preferences.
+
+    ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
+
+1. Choose **Name:** **DemoLab (1)**, click **Review + create (2)**, then select **Create**.
+    
+    ![Screenshot of the Create action group](../images/dp300-lab12-img9a.png)
+
     
 8. On the **Create an alert rule** screen, select **Details (1)** tab, enter Alert rule name as **emailrule (2)**, then select **Review + create**.
     
@@ -73,10 +86,11 @@ In this lab, you will complete the following task:
     ![Screenshot of the warning email](../images/dp300-lab12-img13.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="97c60c2a-00ab-44a1-9248-38801ec03a3b" />
 
 >**Results:** In this exercise you've learned how Alerts can send you an email or call a web hook when some metric (for example database size or CPU usage) reaches a threshold you define. You've just seen how you can easily configure alerts for Azure SQL Databases.
 
